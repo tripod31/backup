@@ -1,0 +1,12 @@
+.*.html
+*.pyc
+*.tar.gz
+*.tar
+*.txt
+*.html
+.vscode
+*.old
+*.conf
+*.swp
+*.project
+*.pydevproject

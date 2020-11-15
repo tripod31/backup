@@ -1,0 +1,4 @@
+[settings]
+prefix=debian
+keyword=^#yoshi
+search_dir=/etc,/home/yoshi
