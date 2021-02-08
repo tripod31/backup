@@ -14,6 +14,7 @@ if __name__ == '__main__':
     args=parser.parse_args()
     
     files_exists =[]
+    files_not_exists =[]
     try:
         tar = tarfile.open(args.in_file,'r')
         os.chdir(args.dist_dir)
@@ -22,6 +23,8 @@ if __name__ == '__main__':
                 fname = info.name
                 if os.path.exists(fname):
                     files_exists.append(fname)
+                else:
+                    files_not_exists.append(fname)
     except Exception as e:
         print(e)
 
@@ -29,5 +32,7 @@ if __name__ == '__main__':
         print ("These files exist:")
         for f in files_exists:
             print(f)
-    else:
-        print ("No files exist")
+    if len(files_not_exists) > 0:
+        print ("These files do not exist:")
+        for f in files_not_exists:
+            print(f)
